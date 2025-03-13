@@ -1,0 +1,1847 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batalha Espiritual - Princípios Essenciais</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #3a0ca3;
+            --primary-light: #4361ee;
+            --secondary: #7209b7;
+            --accent: #f72585;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gold: #ffd700;
+            --success: #4caf50;
+            --info: #2196f3;
+            --warning: #ff9800;
+            --danger: #f44336;
+            --scripture: #ffeeba;
+            --scripture-border: #856404;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease;
+        }
+        
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 30px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header-title {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        
+        .header-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--gold);
+            border-radius: 2px;
+        }
+        
+        .header-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 700px;
+        }
+        
+        .header-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="rgba(255,255,255,0.1)" d="M50 30L55 45H45zM50 70L45 55H55z"/></svg>');
+            z-index: 1;
+            opacity: 0.4;
+            animation: move-background 60s linear infinite;
+        }
+        
+        @keyframes move-background {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 1000px 1000px;
+            }
+        }
+        
+        /* Navigation */
+        .nav-container {
+            background-color: var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-links li {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 20px 15px;
+            display: block;
+            position: relative;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background-color: var(--gold);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 70%;
+        }
+        
+        .nav-controls {
+            display: flex;
+            align-items: center;
+        }
+        
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.2rem;
+            margin-left: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .theme-toggle:hover {
+            transform: rotate(30deg);
+        }
+        
+        .progress-container {
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .progress-text {
+            margin-right: 10px;
+            color: white;
+            font-size: 0.9rem;
+        }
+        
+        .progress-bar {
+            width: 100px;
+            height: 8px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background-color: var(--gold);
+            transition: width 0.5s ease;
+        }
+        
+        /* Main Content Styles */
+        .main-content {
+            padding: 40px 0;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-light);
+        }
+        
+        .section-icon {
+            font-size: 1.8rem;
+            margin-right: 15px;
+            color: var(--primary);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(58, 12, 163, 0.1);
+            border-radius: 50%;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            margin: 0;
+            color: var(--primary);
+        }
+        
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        body.dark-mode .card {
+            background-color: #2d2d2d;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .card:hover::before {
+            width: 6px;
+        }
+        
+        .card-title {
+            font-size: 1.3rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+        
+        .card-title i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+        
+        .card-content {
+            color: var(--dark);
+        }
+        
+        body.dark-mode .card-content {
+            color: #e0e0e0;
+        }
+        
+        .highlight {
+            background-color: rgba(255, 215, 0, 0.2);
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+        
+        .scripture-box {
+            background-color: var(--scripture);
+            border-left: 4px solid var(--scripture-border);
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        body.dark-mode .scripture-box {
+            background-color: rgba(255, 238, 186, 0.1);
+        }
+        
+        .scripture-box::before {
+            content: '\f02d';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background: var(--scripture);
+            padding: 0 10px;
+            border-radius: 3px;
+            color: var(--scripture-border);
+            font-size: 0.9rem;
+        }
+        
+        body.dark-mode .scripture-box::before {
+            background-color: #2d2d2d;
+        }
+        
+        .scripture-box p {
+            margin: 0;
+            color: #555;
+            font-style: italic;
+        }
+        
+        body.dark-mode .scripture-box p {
+            color: #ddd;
+        }
+        
+        .scripture-box .reference {
+            display: block;
+            text-align: right;
+            margin-top: 10px;
+            font-weight: 600;
+            color: var(--scripture-border);
+        }
+        
+        body.dark-mode .scripture-box .reference {
+            color: #ffd54f;
+        }
+        
+        /* Mapa Mental */
+        .mapa-mental {
+            margin: 30px 0;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            position: relative;
+        }
+        
+        body.dark-mode .mapa-mental {
+            background-color: #2d2d2d;
+        }
+        
+        .mapa-zoom {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 5;
+            display: flex;
+            gap: 5px;
+        }
+        
+        .zoom-btn {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        body.dark-mode .zoom-btn {
+            background-color: rgba(50, 50, 50, 0.8);
+            color: white;
+        }
+        
+        .zoom-btn:hover {
+            background-color: rgba(230, 230, 230, 0.9);
+        }
+        
+        body.dark-mode .zoom-btn:hover {
+            background-color: rgba(70, 70, 70, 0.9);
+        }
+        
+        /* Quiz Section */
+        .quiz-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+            margin: 40px 0;
+        }
+        
+        body.dark-mode .quiz-section {
+            background-color: #2d2d2d;
+        }
+        
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        
+        .quiz-title {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .quiz-description {
+            color: #6c757d;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        body.dark-mode .quiz-description {
+            color: #adb5bd;
+        }
+        
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .quiz-question {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        body.dark-mode .quiz-question {
+            background-color: #333;
+        }
+        
+        .quiz-question:hover {
+            transform: translateY(-3px);
+        }
+        
+        .question-text {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        body.dark-mode .question-text {
+            color: #e0e0e0;
+        }
+        
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .option {
+            padding: 12px 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+        }
+        
+        body.dark-mode .option {
+            border-color: #444;
+        }
+        
+        .option:hover {
+            background-color: #f8f9fa;
+            border-color: #ced4da;
+        }
+        
+        body.dark-mode .option:hover {
+            background-color: #3a3a3a;
+            border-color: #555;
+        }
+        
+        .option.selected {
+            border-color: var(--primary);
+            background-color: rgba(58, 12, 163, 0.05);
+        }
+        
+        body.dark-mode .option.selected {
+            background-color: rgba(58, 12, 163, 0.15);
+        }
+        
+        .option.correct {
+            border-color: var(--success);
+            background-color: rgba(76, 175, 80, 0.1);
+        }
+        
+        .option.incorrect {
+            border-color: var(--danger);
+            background-color: rgba(244, 67, 54, 0.1);
+        }
+        
+        .option-marker {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ced4da;
+            border-radius: 50%;
+            margin-right: 12px;
+            position: relative;
+            flex-shrink: 0;
+        }
+        
+        .option.selected .option-marker {
+            border-color: var(--primary);
+        }
+        
+        .option.selected .option-marker::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            background-color: var(--primary);
+            border-radius: 50%;
+        }
+        
+        .quiz-footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .quiz-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .quiz-btn.check {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .quiz-btn.check:hover {
+            background-color: var(--primary-light);
+        }
+        
+        .quiz-btn.next {
+            background-color: var(--gold);
+            color: #333;
+        }
+        
+        .quiz-btn.next:hover {
+            background-color: #e6c200;
+        }
+        
+        .quiz-results {
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: rgba(67, 97, 238, 0.05);
+            border-radius: 8px;
+        }
+        
+        body.dark-mode .quiz-results {
+            background-color: rgba(67, 97, 238, 0.15);
+        }
+        
+        .result-emoji {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        
+        .result-score {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        /* Study Timer */
+        .study-timer {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 100;
+            transition: transform 0.3s ease;
+        }
+        
+        body.dark-mode .study-timer {
+            background-color: #2d2d2d;
+        }
+        
+        .study-timer.minimized {
+            transform: translateY(80%);
+        }
+        
+        .timer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        
+        .timer-title {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+        
+        .timer-controls {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .timer-btn {
+            background: none;
+            border: none;
+            font-size: 0.8rem;
+            cursor: pointer;
+            color: #6c757d;
+            transition: color 0.3s ease;
+        }
+        
+        .timer-btn:hover {
+            color: var(--primary);
+        }
+        
+        .timer-display {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin: 5px 0;
+        }
+        
+        body.dark-mode .timer-display {
+            color: white;
+        }
+        
+        .timer-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .timer-action-btn {
+            background-color: var(--primary-light);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .timer-action-btn:hover {
+            background-color: var(--primary);
+        }
+        
+        /* Flashcards */
+        .flashcard-container {
+            margin: 40px 0;
+        }
+        
+        .flashcard-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        
+        .flashcard-title {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .flashcard-description {
+            color: #6c757d;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        body.dark-mode .flashcard-description {
+            color: #adb5bd;
+        }
+        
+        .flashcard-scene {
+            width: 100%;
+            max-width: 600px;
+            height: 220px;
+            margin: 0 auto;
+            perspective: 1000px;
+        }
+        
+        .flashcard {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+        
+        .flashcard.flipped {
+            transform: rotateY(180deg);
+        }
+        
+        .flashcard-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .flashcard-front {
+            background-color: var(--primary-light);
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .flashcard-back {
+            background-color: white;
+            color: var(--dark);
+            transform: rotateY(180deg);
+        }
+        
+        body.dark-mode .flashcard-back {
+            background-color: #333;
+            color: white;
+        }
+        
+        .flashcard-navigation {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 15px;
+        }
+        
+        .flashcard-nav-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .flashcard-nav-btn:hover {
+            background-color: var(--primary-light);
+        }
+        
+        .flashcard-counter {
+            display: flex;
+            align-items: center;
+            color: #6c757d;
+        }
+        
+        body.dark-mode .flashcard-counter {
+            color: #adb5bd;
+        }
+        
+        /* Achievement Badge */
+        .achievement-badge {
+            position: fixed;
+            top: 80px;
+            right: -300px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            z-index: 1000;
+            transition: right 0.5s ease;
+            width: 250px;
+        }
+        
+        body.dark-mode .achievement-badge {
+            background-color: #333;
+        }
+        
+        .achievement-badge.show {
+            right: 20px;
+        }
+        
+        .badge-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            color: #333;
+        }
+        
+        .badge-content {
+            flex-grow: 1;
+        }
+        
+        .badge-title {
+            font-weight: 600;
+            margin: 0 0 5px 0;
+            color: var(--dark);
+        }
+        
+        body.dark-mode .badge-title {
+            color: white;
+        }
+        
+        .badge-description {
+            font-size: 0.8rem;
+            margin: 0;
+            color: #6c757d;
+        }
+        
+        body.dark-mode .badge-description {
+            color: #adb5bd;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            text-align: center;
+        }
+        
+        .footer-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .footer-description {
+            max-width: 600px;
+            margin: 0 auto 20px auto;
+            opacity: 0.8;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            opacity: 1;
+        }
+        
+        .footer-credits {
+            font-size: 0.9rem;
+            opacity: 0.6;
+            margin-top: 30px;
+        }
+        
+        /* Audio Player */
+        .audio-player {
+            background-color: #f8f9fa;
+            border-radius: 30px;
+            padding: 6px 12px;
+            display: inline-flex;
+            align-items: center;
+            margin: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        body.dark-mode .audio-player {
+            background-color: #333;
+        }
+        
+        .audio-play-btn {
+            background: none;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--primary);
+            transition: background-color 0.3s ease;
+        }
+        
+        .audio-play-btn:hover {
+            background-color: rgba(58, 12, 163, 0.1);
+        }
+        
+        .audio-text {
+            margin-left: 10px;
+            font-size: 0.8rem;
+            color: #6c757d;
+        }
+        
+        body.dark-mode .audio-text {
+            color: #adb5bd;
+        }
+        
+        /* Responsive Designs */
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 2.5rem;
+            }
+            
+            .header-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .card-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .study-timer {
+                bottom: 10px;
+                right: 10px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-animation"></div>
+        <div class="container header-content">
+            <h1 class="header-title">Noções de Batalha Espiritual</h1>
+            <p class="header-subtitle">Conheça os princípios espirituais e as armas essenciais para vencer na guerra espiritual</p>
+        </div>
+    </header>
+    
+    <div class="nav-container">
+        <nav class="container">
+            <ul class="nav-links">
+                <li><a href="#introducao" class="nav-item" data-section="introducao">Introdução</a></li>
+                <li><a href="#inimigo" class="nav-item" data-section="inimigo">O Inimigo</a></li>
+                <li><a href="#armas" class="nav-item" data-section="armas">Armas Espirituais</a></li>
+                <li><a href="#santificacao" class="nav-item" data-section="santificacao">Santificação</a></li>
+                <li><a href="#mapa" class="nav-item" data-section="mapa">Mapa Mental</a></li>
+                <li><a href="#quiz" class="nav-item" data-section="quiz">Quiz</a></li>
+            </ul>
+            <div class="nav-controls">
+                <div class="progress-container">
+                    <span class="progress-text">Progresso: <span id="progress-percent">0%</span></span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                </div>
+                <button class="theme-toggle" id="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+    </div>
+    
+    <main class="container main-content">
+        <section id="introducao" class="section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <h2 class="section-title">Introdução à Batalha Espiritual</h2>
+            </div>
+            
+            <p>A batalha espiritual é uma realidade fundamental na vida cristã. Conforme explicado pelo Bispo Ricardo na Aula 10 do Curso de Aspirantes, baseado em Efésios 6:12, nossa luta não é contra pessoas físicas, mas contra forças espirituais malignas.</p>
+            
+            <div class="scripture-box">
+                <p>"Porque não temos que lutar contra a carne e o sangue, mas, sim, contra os principados, contra as potestades, contra os príncipes das trevas deste século, contra as hostes espirituais da maldade, nos lugares celestiais."</p>
+                <span class="reference">Efésios 6:12</span>
+                <div class="audio-player" data-verse="efesios-6-12">
+                    <button class="audio-play-btn">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <span class="audio-text">Ouvir versículo</span>
+                </div>
+            </div>
+            
+            <p>A vida cristã é comparada a uma <span class="highlight">guerra espiritual</span> onde Jesus Cristo é o general supremo, e os fiéis são soldados convocados a cumprir seu propósito dentro deste contexto de batalha. Esta perspectiva nos ajuda a entender por que precisamos de preparo espiritual e armas adequadas para enfrentar os desafios da vida cristã.</p>
+        </section>
+        
+        <section id="inimigo" class="section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-skull"></i>
+                </div>
+                <h2 class="section-title">O Verdadeiro Inimigo</h2>
+            </div>
+            
+            <p>É crucial entender quem é o verdadeiro inimigo na batalha espiritual. O Bispo Ricardo esclarece que o inimigo não são as pessoas ao nosso redor, mas <span class="highlight">Satanás e seus demônios</span>. Esta identificação é apoiada por passagens bíblicas importantes.</p>
+            
+            <div class="card-container">
+                <div class="card">
+                    <h3 class="card-title"><i class="fas fa-book"></i>Mateus 13:37-39</h3>
+                    <div class="card-content">
+                        <p>Nesta passagem, Jesus explica a diferença entre os filhos do reino e os filhos do maligno, mostrando a clara distinção entre aqueles que pertencem a Deus e os que estão sob influência do inimigo.</p>
+                        <div class="audio-player" data-verse="mateus-13-37-39">
+                            <button class="audio-play-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <span class="audio-text">Ouvir versículo</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title"><i class="fas fa-book"></i>Isaías 14:12-15</h3>
+                    <div class="card-content">
+                        <p>Esta passagem descreve a queda de Lúcifer (originalmente um anjo de luz) e sua ambição de ser semelhante ao Altíssimo, revelando a origem do mal e a natureza do adversário.</p>
+                        <div class="audio-player" data-verse="isaias-14-12-15">
+                            <button class="audio-play-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <span class="audio-text">Ouvir versículo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <p>Lúcifer, antes de sua queda, era um anjo de alta posição, mas sua ambição e orgulho o levaram à rebelião contra Deus. Esta compreensão histórica nos ajuda a entender a natureza do inimigo e suas estratégias atuais.</p>
+            
+            <p>Este entendimento é fundamental para direcionar corretamente nossos esforços na batalha espiritual, evitando conflitos desnecessários com pessoas e focando no verdadeiro adversário.</p>
+        </section>
+        
+        <section id="armas" class="section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h2 class="section-title">As Cinco Armas Espirituais</h2>
+            </div>
+            
+            <p>Para vencer na guerra espiritual, o cristão precisa estar equipado com as armas adequadas. A aula identifica cinco armas espirituais principais:</p>
+            
+            <div class="card-container">
+                <div class="card">
+                    <h3 class="card-title"><i class="fas fa-praying-hands"></i>1. Oração</h3>
+                    <div class="card-content">
+                        <p>A oração é apresentada como a arma fundamental na batalha espiritual. Através dela:</p>
+                        <ul>
+                            <li>Estabelecemos comunicação direta com Deus</li>
+                            <li>Recebemos orientação divina sobre estratégias para vencer</li>
+                            <li>Nos conectamos ao poder sobrenatural de Deus</li>
+                            <li>Fortalecemos nossa relação com o Senhor</li>
+                        </ul>
+                        <p>A oração deve ser constante e intencional, não apenas nos momentos de crise, mas como um estilo de vida.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title"><i class="fas fa-utensils"></i>2. Jejum</h3>
+                    <div class="card-content">
+                        <p>O jejum é destacado como a segunda arma poderosa contra forças demoníacas. O exemplo de Daniel, que jejuou por 21 dias (Daniel 10), ilustra como o jejum:</p>
+                        <ul>
+                            <li>Intensifica nossa sensibilidade espiritual</li>
+                            <li>Demonstra nossa determinação diante de Deus</li>
+                            <li>Enfraquece os desejos carnais e fortalece o espírito</li>
+                            <li>Quebra resistências no mundo espiritual</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title"><i class="fas fa-book"></i>3. Conhecimento da Palavra</h3>
+                    <div class="card-content">
+                        <p>"O meu povo foi destruído por falta de conhecimento" (Oséias 4:6). Conhecer profundamente as Escrituras:</p>
+                        <ul>
+                            <li>Confere autoridade no mundo espiritual</li>
+                            <li>Fornece discernimento para identificar estratégias do inimigo</li>
+                            <li>Revela promessas e direitos que temos em Cristo</li>
+                            <li>É essencial para usar a "espada do Espírito" (Efésios 6:17)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title"><i class="fas fa-music"></i>4. Louvor e Adoração</h3>
+                    <div class="card-content">
+                        <p>O louvor é apresentado como uma poderosa arma espiritual, exemplificado pela libertação de Paulo e Silas na prisão (Atos 16):</p>
+                        <ul>
+                            <li>A adoração deve ser uma prática constante, não apenas nos momentos de alegria</li>
+                            <li>Louvar a Deus em meio às adversidades é um ato de guerra espiritual</li>
+                            <li>O louvor cria uma atmosfera propícia para a manifestação do poder de Deus</li>
+                            <li>A adoração desloca o foco dos problemas para a grandeza de Deus</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title"><i class="fas fa-heart"></i>5. Fé</h3>
+                    <div class="card-content">
+                        <p>Descrita como "a certeza do que se espera e a convicção do que não se vê" (Hebreus 11:1), a fé é essencial para a vida espiritual:</p>
+                        <ul>
+                            <li>Ativa as promessas de Deus</li>
+                            <li>Permite enxergar além das circunstâncias naturais</li>
+                            <li>É o escudo que apaga os dardos inflamados do maligno (Efésios 6:16)</li>
+                            <li>Sem ela, é impossível agradar a Deus (Hebreus 11:6)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="santificacao" class="section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-dove"></i>
+                </div>
+                <h2 class="section-title">A Importância da Santificação</h2>
+            </div>
+            
+            <p>A parte final da aula aborda a santificação e a busca pela paz como princípios fundamentais na vida cristã. Baseando-se em Hebreus 12:14, que destaca a necessidade de "seguir a paz com todos e a santificação, sem a qual ninguém verá o Senhor".</p>
+            
+            <div class="scripture-box">
+                <p>"Segui a paz com todos e a santificação, sem a qual ninguém verá o Senhor."</p>
+                <span class="reference">Hebreus 12:14</span>
+                <div class="audio-player" data-verse="hebreus-12-14">
+                    <button class="audio-play-btn">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <span class="audio-text">Ouvir versículo</span>
+                </div>
+            </div>
+            
+            <div class="card-container">
+                <div class="card">
+                    <h3 class="card-title"><i class="fas fa-leaf"></i>Processo Contínuo</h3>
+                    <div class="card-content">
+                        <p>A santidade não é uma opção, mas um requisito para comunhão com Deus. É um processo contínuo, não um estado alcançado de uma vez. O cristão deve se esforçar diariamente para se desvincular do pecado.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title"><i class="fas fa-heart"></i>Atitudes do Coração</h3>
+                    <div class="card-content">
+                        <p>A verdadeira santidade envolve atitudes guiadas pelo Espírito Santo e um desejo sincero de agradar a Deus. Não se trata apenas de comportamentos externos, mas de uma transformação interna.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title"><i class="fas fa-bolt"></i>Autoridade Espiritual</h3>
+                    <div class="card-content">
+                        <p>O crescimento espiritual nos torna mais semelhantes a Cristo e nos confere maior autoridade espiritual. Quanto mais santa a vida do cristão, maior sua eficácia na batalha espiritual.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <p>A aula conclui com uma advertência contra os prazeres mundanos, incentivando os fiéis a buscarem ser cheios do Espírito Santo para vencerem na batalha espiritual.</p>
+        </section>
+        
+        <section id="mapa" class="section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-sitemap"></i>
+                </div>
+                <h2 class="section-title">Mapa Mental: Batalha Espiritual</h2>
+            </div>
+            
+            <div class="mapa-mental">
+                <div class="mapa-zoom">
+                    <button class="zoom-btn" id="zoom-in"><i class="fas fa-plus"></i></button>
+                    <button class="zoom-btn" id="zoom-out"><i class="fas fa-minus"></i></button>
+                    <button class="zoom-btn" id="zoom-reset"><i class="fas fa-undo"></i></button>
+                </div>
+                
+                <div id="mapa-mental-container" style="height: 600px; overflow: auto;">
+                    <!-- Embedding a simplified representation of the mindmap -->
+                    <img src="/api/placeholder/800/600" alt="Mapa Mental da Batalha Espiritual" style="width: 100%; height: auto;" />
+                </div>
+            </div>
+        </section>
+        
+        <section id="flashcards" class="section flashcard-container">
+            <div class="flashcard-header">
+                <h2 class="flashcard-title">Cartões de Memorização</h2>
+                <p class="flashcard-description">Teste seu conhecimento com estes cartões. Clique para virar e navegar entre os conceitos essenciais.</p>
+            </div>
+            
+            <div class="flashcard-scene">
+                <div class="flashcard" id="flashcard">
+                    <div class="flashcard-face flashcard-front">
+                        <p>Quais são as cinco armas espirituais mencionadas na aula?</p>
+                    </div>
+                    <div class="flashcard-face flashcard-back">
+                        <p>1. Oração<br>2. Jejum<br>3. Conhecimento da Palavra<br>4. Louvor e Adoração<br>5. Fé</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flashcard-navigation">
+                <button class="flashcard-nav-btn" id="prev-card"><i class="fas fa-arrow-left"></i></button>
+                <div class="flashcard-counter">
+                    <span id="current-card">1</span>/<span id="total-cards">10</span>
+                </div>
+                <button class="flashcard-nav-btn" id="next-card"><i class="fas fa-arrow-right"></i></button>
+            </div>
+        </section>
+        
+        <section id="quiz" class="section quiz-section">
+            <div class="quiz-header">
+                <h2 class="quiz-title">Teste Seus Conhecimentos</h2>
+                <p class="quiz-description">Responda às perguntas abaixo para avaliar seu entendimento sobre os princípios da batalha espiritual.</p>
+            </div>
+            
+            <div class="quiz-container">
+                <div class="quiz-question" id="question-1">
+                    <p class="question-text">1. Segundo Efésios 6:12, contra quem realmente lutamos na batalha espiritual?</p>
+                    <div class="options-container">
+                        <div class="option" data-correct="false">
+                            <div class="option-marker"></div>
+                            <span>Contra pessoas que nos perseguem</span>
+                        </div>
+                        <div class="option" data-correct="true">
+                            <div class="option-marker"></div>
+                            <span>Contra principados, potestades e hostes espirituais da maldade</span>
+                        </div>
+                        <div class="option" data-correct="false">
+                            <div class="option-marker"></div>
+                            <span>Contra governantes e autoridades terrenas</span>
+                        </div>
+                        <div class="option" data-correct="false">
+                            <div class="option-marker"></div>
+                            <span>Contra nossa própria natureza humana apenas</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="quiz-question" id="question-2" style="display: none;">
+                    <p class="question-text">2. Qual passagem bíblica descreve a queda de Lúcifer?</p>
+                    <div class="options-container">
+                        <div class="option" data-correct="false">
+                            <div class="option-marker"></div>
+                            <span>Gênesis 3:1-5</span>
+                        </div>
+                        <div class="option" data-correct="false">
+                            <div class="option-marker"></div>
+                            <span>Apocalipse 12:7-9</span>
+                        </div>
+                        <div class="option" data-correct="true">
+                            <div class="option-marker"></div>
+                            <span>Isaías 14:12-15</span>
+                        </div>
+                        <div class="option" data-correct="false">
+                            <div class="option-marker"></div>
+                            <span>Ezequiel 28:12-19</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="quiz-question" id="question-3" style="display: none;">
+                    <p class="question-text">3. Por quantos dias Daniel jejuou e orou até receber resposta?</p>
+                    <div class="options-container">
+                        <div class="option" data-correct="false">
+                            <div class="option-marker"></div>
+                            <span>7 dias</span>
+                        </div>
+                        <div class="option" data-correct="false">
+                            <div class="option-marker"></div>
+                            <span>14 dias</span>
+                        </div>
+                        <div class="option" data-correct="true">
+                            <div class="option-marker"></div>
+                            <span>21 dias</span>
+                        </div>
+                        <div class="option" data-correct="false">
+                            <div class="option-marker"></div>
+                            <span>40 dias</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="quiz-question" id="question-4" style="display: none;">
+                    <p class="question-text">4. Complete o versículo: "Sem santificação, ninguém..."</p>
+                    <div class="options-container">
+                        <div class="option" data-correct="false">
+                            <div class="option-marker"></div>
+                            <span>será salvo</span>
+                        </div>
+                        <div class="option" data-correct="true">
+                            <div class="option-marker"></div>
+                            <span>verá o Senhor</span>
+                        </div>
+                        <div class="option" data-correct="false">
+                            <div class="option-marker"></div>
+                            <span>entrará no céu</span>
+                        </div>
+                        <div class="option" data-correct="false">
+                            <div class="option-marker"></div>
+                            <span>terá vida eterna</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="quiz-question" id="question-5" style="display: none;">
+                    <p class="question-text">5. Quem são os personagens bíblicos que louvaram a Deus na prisão e foram libertados?</p>
+                    <div class="options-container">
+                        <div class="option" data-correct="false">
+                            <div class="option-marker"></div>
+                            <span>Pedro e João</span>
+                        </div>
+                        <div class="option" data-correct="false">
+                            <div class="option-marker"></div>
+                            <span>José e Daniel</span>
+                        </div>
+                        <div class="option" data-correct="true">
+                            <div class="option-marker"></div>
+                            <span>Paulo e Silas</span>
+                        </div>
+                        <div class="option" data-correct="false">
+                            <div class="option-marker"></div>
+                            <span>Tiago e Barnabé</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="quiz-results" id="quiz-results" style="display: none;">
+                    <div class="result-emoji">🏆</div>
+                    <p class="result-score">Pontuação: <span id="score">0</span>/5</p>
+                    <p class="result-message" id="result-message"></p>
+                    <button class="quiz-btn check" id="restart-quiz">Reiniciar Quiz</button>
+                </div>
+                
+                <div class="quiz-footer" id="quiz-footer">
+                    <button class="quiz-btn check" id="check-answer">Verificar</button>
+                    <button class="quiz-btn next" id="next-question" style="display: none;">Próxima Pergunta</button>
+                </div>
+            </div>
+        </section>
+        
+        <div class="achievement-badge" id="achievement-badge">
+            <div class="badge-icon">
+                <i class="fas fa-trophy"></i>
+            </div>
+            <div class="badge-content">
+                <h4 class="badge-title">Conquista Desbloqueada!</h4>
+                <p class="badge-description" id="achievement-text">Você completou uma seção importante do estudo!</p>
+            </div>
+        </div>
+        
+        <div class="study-timer" id="study-timer">
+            <div class="timer-header">
+                <span class="timer-title">Tempo de Estudo</span>
+                <div class="timer-controls">
+                    <button class="timer-btn" id="minimize-timer"><i class="fas fa-minus"></i></button>
+                </div>
+            </div>
+            <div class="timer-display" id="timer-display">00:00</div>
+            <div class="timer-actions">
+                <button class="timer-action-btn" id="start-timer">Iniciar</button>
+                <button class="timer-action-btn" id="pause-timer" style="display: none;">Pausar</button>
+                <button class="timer-action-btn" id="reset-timer">Zerar</button>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container footer-content">
+            <h3 class="footer-title">Batalha Espiritual - Princípios Essenciais</h3>
+            <p class="footer-description">Continue seu aprendizado sobre os princípios da batalha espiritual e as armas necessárias para vencer.</p>
+            <div class="footer-links">
+                <a href="#" class="footer-link">Materiais Adicionais</a>
+                <a href="#" class="footer-link">Bibliografia Recomendada</a>
+                <a href="#" class="footer-link">Próximas Aulas</a>
+            </div>
+            <p class="footer-credits">© 2025 Curso de Aspirantes - Todos os direitos reservados</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                showAchievement('Modo Noturno Ativado', 'Você desbloqueou o modo escuro para leitura noturna confortável!');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        });
+        
+        // Scroll Animation
+        const sections = document.querySelectorAll('.section');
+        const navItems = document.querySelectorAll('.nav-item');
+        
+        function checkSections() {
+            const triggerBottom = window.innerHeight * 0.8;
+            
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                
+                if (sectionTop < triggerBottom) {
+                    section.classList.add('visible');
+                    updateProgress();
+                }
+            });
+        }
+        
+        function updateProgress() {
+            const totalSections = sections.length;
+            const visibleSections = document.querySelectorAll('.section.visible').length;
+            const progressPercent = Math.round((visibleSections / totalSections) * 100);
+            
+            document.getElementById('progress-percent').textContent = `${progressPercent}%`;
+            document.getElementById('progress-fill').style.width = `${progressPercent}%`;
+            
+            if (progressPercent === 100 && !progressComplete) {
+                progressComplete = true;
+                showAchievement('Estudo Completo!', 'Parabéns! Você concluiu todo o material sobre Batalha Espiritual!');
+            }
+        }
+        
+        // Navigation Scrolling
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = item.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                window.scrollTo({
+                    top: targetSection.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Study Timer
+        const timerDisplay = document.getElementById('timer-display');
+        const startTimerBtn = document.getElementById('start-timer');
+        const pauseTimerBtn = document.getElementById('pause-timer');
+        const resetTimerBtn = document.getElementById('reset-timer');
+        const minimizeTimerBtn = document.getElementById('minimize-timer');
+        const studyTimer = document.getElementById('study-timer');
+        
+        let timerInterval;
+        let seconds = 0;
+        let timerRunning = false;
+        
+        function updateTimer() {
+            seconds++;
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = seconds % 60;
+            
+            timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+            
+            if (seconds === 300 && !fiveMinuteAchievement) { // 5 minutes
+                fiveMinuteAchievement = true;
+                showAchievement('5 Minutos de Estudo!', 'Você dedicou 5 minutos ao estudo da Batalha Espiritual!');
+            }
+            
+            if (seconds === 900 && !fifteenMinuteAchievement) { // 15 minutes
+                fifteenMinuteAchievement = true;
+                showAchievement('15 Minutos de Estudo!', 'Sua dedicação é impressionante! Continue assim!');
+            }
+        }
+        
+        startTimerBtn.addEventListener('click', () => {
+            if (!timerRunning) {
+                timerInterval = setInterval(updateTimer, 1000);
+                timerRunning = true;
+                startTimerBtn.style.display = 'none';
+                pauseTimerBtn.style.display = 'block';
+            }
+        });
+        
+        pauseTimerBtn.addEventListener('click', () => {
+            clearInterval(timerInterval);
+            timerRunning = false;
+            startTimerBtn.style.display = 'block';
+            pauseTimerBtn.style.display = 'none';
+        });
+        
+        resetTimerBtn.addEventListener('click', () => {
+            clearInterval(timerInterval);
+            seconds = 0;
+            timerDisplay.textContent = '00:00';
+            timerRunning = false;
+            startTimerBtn.style.display = 'block';
+            pauseTimerBtn.style.display = 'none';
+        });
+        
+        minimizeTimerBtn.addEventListener('click', () => {
+            studyTimer.classList.toggle('minimized');
+            
+            if (studyTimer.classList.contains('minimized')) {
+                minimizeTimerBtn.innerHTML = '<i class="fas fa-plus"></i>';
+            } else {
+                minimizeTimerBtn.innerHTML = '<i class="fas fa-minus"></i>';
+            }
+        });
+        
+        // Achievement System
+        const achievementBadge = document.getElementById('achievement-badge');
+        let progressComplete = false;
+        let fiveMinuteAchievement = false;
+        let fifteenMinuteAchievement = false;
+        
+        function showAchievement(title, description) {
+            const badgeTitle = document.querySelector('.badge-title');
+            const badgeDescription = document.getElementById('achievement-text');
+            
+            badgeTitle.textContent = title;
+            badgeDescription.textContent = description;
+            
+            achievementBadge.classList.add('show');
+            
+            setTimeout(() => {
+                achievementBadge.classList.remove('show');
+            }, 5000);
+        }
+        
+        // Flashcards System
+        const flashcard = document.getElementById('flashcard');
+        const prevCardBtn = document.getElementById('prev-card');
+        const nextCardBtn = document.getElementById('next-card');
+        const currentCardDisplay = document.getElementById('current-card');
+        const totalCardsDisplay = document.getElementById('total-cards');
+        
+        const flashcards = [
+            {
+                front: "Quais são as cinco armas espirituais mencionadas na aula?",
+                back: "1. Oração<br>2. Jejum<br>3. Conhecimento da Palavra<br>4. Louvor e Adoração<br>5. Fé"
+            },
+            {
+                front: "Segundo Efésios 6:12, contra quem realmente lutamos?",
+                back: "Não contra carne e sangue, mas contra principados, potestades, príncipes das trevas e hostes espirituais da maldade nos lugares celestiais."
+            },
+            {
+                front: "Qual passagem bíblica descreve a queda de Lúcifer?",
+                back: "Isaías 14:12-15"
+            },
+            {
+                front: "Por quantos dias Daniel jejuou para receber resposta de Deus?",
+                back: "21 dias"
+            },
+            {
+                front: "Complete o versículo: 'Sem santificação, ninguém...'",
+                back: "'...verá o Senhor.' (Hebreus 12:14)"
+            },
+            {
+                front: "Quem louvou a Deus na prisão e foi libertado milagrosamente?",
+                back: "Paulo e Silas (Atos 16)"
+            },
+            {
+                front: "De acordo com Hebreus 11:1, o que é a fé?",
+                back: "A certeza das coisas que se esperam e a convicção de fatos que não se veem."
+            },
+            {
+                front: "Qual foi o motivo principal da queda de Lúcifer?",
+                back: "Seu orgulho e ambição de ser semelhante ao Altíssimo (ser como Deus)."
+            },
+            {
+                front: "De acordo com Oséias 4:6, por que o povo de Deus é destruído?",
+                back: "Por falta de conhecimento."
+            },
+            {
+                front: "Por que a santificação é importante na batalha espiritual?",
+                back: "É um requisito para ver o Senhor, confere maior autoridade espiritual e nos torna mais parecidos com Cristo."
+            }
+        ];
+        
+        let currentCardIndex = 0;
+        totalCardsDisplay.textContent = flashcards.length;
+        
+        function updateFlashcard() {
+            const frontContent = flashcard.querySelector('.flashcard-front p');
+            const backContent = flashcard.querySelector('.flashcard-back p');
+            
+            frontContent.innerHTML = flashcards[currentCardIndex].front;
+            backContent.innerHTML = flashcards[currentCardIndex].back;
+            currentCardDisplay.textContent = currentCardIndex + 1;
+            
+            // Ensure card is showing front when changing
+            if (flashcard.classList.contains('flipped')) {
+                flashcard.classList.remove('flipped');
+            }
+        }
+        
+        flashcard.addEventListener('click', () => {
+            flashcard.classList.toggle('flipped');
+        });
+        
+        prevCardBtn.addEventListener('click', () => {
+            if (currentCardIndex > 0) {
+                currentCardIndex--;
+                updateFlashcard();
+            }
+        });
+        
+        nextCardBtn.addEventListener('click', () => {
+            if (currentCardIndex < flashcards.length - 1) {
+                currentCardIndex++;
+                updateFlashcard();
+            }
+            
+            if (currentCardIndex === flashcards.length - 1) {
+                showAchievement('Mestre dos Flashcards!', 'Você revisou todos os cartões de memorização!');
+            }
+        });
+        
+        // Quiz System
+        const checkAnswerBtn = document.getElementById('check-answer');
+        const nextQuestionBtn = document.getElementById('next-question');
+        const restartQuizBtn = document.getElementById('restart-quiz');
+        const quizFooter = document.getElementById('quiz-footer');
+        const quizResults = document.getElementById('quiz-results');
+        const scoreDisplay = document.getElementById('score');
+        const resultMessage = document.getElementById('result-message');
+        
+        let currentQuestion = 1;
+        let score = 0;
+        let questionAnswered = false;
+        
+        const options = document.querySelectorAll('.option');
+        options.forEach(option => {
+            option.addEventListener('click', () => {
+                if (!questionAnswered) {
+                    const currentQuestionOptions = document.querySelectorAll(`#question-${currentQuestion} .option`);
+                    
+                    currentQuestionOptions.forEach(opt => {
+                        opt.classList.remove('selected');
+                    });
+                    
+                    option.classList.add('selected');
+                }
+            });
+        });
+        
+        checkAnswerBtn.addEventListener('click', () => {
+            const selectedOption = document.querySelector(`#question-${currentQuestion} .option.selected`);
+            
+            if (selectedOption && !questionAnswered) {
+                questionAnswered = true;
+                
+                if (selectedOption.getAttribute('data-correct') === 'true') {
+                    selectedOption.classList.add('correct');
+                    score++;
+                } else {
+                    selectedOption.classList.add('incorrect');
+                    
+                    // Show the correct answer
+                    const correctOption = document.querySelector(`#question-${currentQuestion} .option[data-correct="true"]`);
+                    correctOption.classList.add('correct');
+                }
+                
+                checkAnswerBtn.style.display = 'none';
+                
+                if (currentQuestion < 5) {
+                    nextQuestionBtn.style.display = 'block';
+                } else {
+                    showQuizResults();
+                }
+            }
+        });
+        
+        nextQuestionBtn.addEventListener('click', () => {
+            document.getElementById(`question-${currentQuestion}`).style.display = 'none';
+            currentQuestion++;
+            document.getElementById(`question-${currentQuestion}`).style.display = 'block';
+            
+            questionAnswered = false;
+            nextQuestionBtn.style.display = 'none';
+            checkAnswerBtn.style.display = 'block';
+        });
+        
+        function showQuizResults() {
+            quizFooter.style.display = 'none';
+            quizResults.style.display = 'block';
+            scoreDisplay.textContent = score;
+            
+            if (score === 5) {
+                resultMessage.textContent = "Excelente! Você domina os conceitos da batalha espiritual!";
+                showAchievement('Quiz Perfeito!', 'Você acertou todas as perguntas do quiz! Domínio completo!');
+            } else if (score >= 3) {
+                resultMessage.textContent = "Bom trabalho! Você compreende bem os princípios da batalha espiritual.";
+                showAchievement('Bom no Quiz!', 'Você demonstrou um bom conhecimento sobre batalha espiritual!');
+            } else {
+                resultMessage.textContent = "Continue estudando os conceitos para fortalecer seu conhecimento.";
+            }
+        }
+        
+        restartQuizBtn.addEventListener('click', () => {
+            // Reset quiz state
+            currentQuestion = 1;
+            score = 0;
+            questionAnswered = false;
+            
+            // Hide all questions and reset options
+            for (let i = 1; i <= 5; i++) {
+                document.getElementById(`question-${i}`).style.display = i === 1 ? 'block' : 'none';
+                
+                const questionOptions = document.querySelectorAll(`#question-${i} .option`);
+                questionOptions.forEach(option => {
+                    option.classList.remove('selected', 'correct', 'incorrect');
+                });
+            }
+            
+            // Reset UI
+            quizResults.style.display = 'none';
+            quizFooter.style.display = 'flex';
+            checkAnswerBtn.style.display = 'block';
+            nextQuestionBtn.style.display = 'none';
+        });
+        
+        // Audio Players
+        const audioButtons = document.querySelectorAll('.audio-play-btn');
+        
+        audioButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const audioPlayer = button.parentElement;
+                const verse = audioPlayer.getAttribute('data-verse');
+                const icon = button.querySelector('i');
+                
+                if (icon.classList.contains('fa-play')) {
+                    // Simulate audio playing
+                    icon.classList.remove('fa-play');
+                    icon.classList.add('fa-pause');
+                    
+                    // After 3 seconds (simulating audio duration), revert back
+                    setTimeout(() => {
+                        icon.classList.remove('fa-pause');
+                        icon.classList.add('fa-play');
+                    }, 3000);
+                } else {
+                    // Pause simulation
+                    icon.classList.remove('fa-pause');
+                    icon.classList.add('fa-play');
+                }
+            });
+        });
+        
+        // Initialize
+        window.addEventListener('scroll', checkSections);
+        window.addEventListener('DOMContentLoaded', () => {
+            checkSections();
+            updateFlashcard();
+            
+            // Show first achievement
+            setTimeout(() => {
+                showAchievement('Estudo Iniciado!', 'Você começou a aprender sobre Batalha Espiritual!');
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
